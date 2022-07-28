@@ -19,7 +19,7 @@ def get_candidate(candidate_id):
                 'picture': candidate['picture'],
                 'skills': candidate['skills'],
             }
-        return {'not_found': 'Ушел на обед'}
+    return {'not_found': 'Кандидат не найден'}
 
 
 def get_candidates_by_name(candidates_name):
@@ -27,5 +27,9 @@ def get_candidates_by_name(candidates_name):
 
 
 def get_candidates_by_skill(skill_name):
-    pass
-
+    candidates = []
+    for candidate in __data:
+        skills = candidate['skills'].lower().split(', ')
+        if skill_name.lower() in skills:
+            candidates.append(candidate)
+    return candidates

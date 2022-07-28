@@ -8,5 +8,6 @@
     <h1>Найдено кандидатов: {{ candidates_len }}</h1>
     {% for candidate in candidates %}
     <p><a href="/candidate/{{ candidate_id }}">{{ candidate.name }}</a></p>
+    {% endfor %}
 </body>
 </html>
