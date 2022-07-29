@@ -10,8 +10,13 @@
         {% for candidate in candidates %}
             <p><a href="/candidate/{{ candidate.id }}">{{ candidate.name }}</a></p>
         {% endfor %}
+    {% elif candidates|length == 1 %}
+        {% for candidate in candidates %}
+            <h1>Найдено со скиллом {{ skill }}: {{ candidates_len }}</h1>
+            <p><a href="/candidate/{{ candidate.id }}">{{ candidate.name }}</a></p>
+        {% endfor %}
     {% else %}
-    <h1>Кандидатов нет</h1>
+        <h1>Кандидатов нет</h1>
     {% endif %}
 </body>
 </html>
